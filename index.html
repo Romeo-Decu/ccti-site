@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCTI — expanding horizons</title>
+<meta name="description" content="CCTI — Research Center for Thermodynamics and Informatics. R&D in clean energy, robotics for hostile environments and climate technologies.">
+<link rel="icon" href="logo.png">
+<style>
+:root{
+  --red:#e60009; --shark:#333f50; --shark-2:#566173; --line:#e4e6ea; --soft:#f5f6f8; --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--shark);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--red)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--shark);font-weight:800;letter-spacing:.08em}
+.brand img{width:40px;height:auto}
+.nav nav{display:flex;gap:20px;flex-wrap:wrap}
+.nav nav a{color:var(--shark-2);text-decoration:none;font-size:14px}
+.nav nav a:hover{color:var(--red)}
+.lang{border:1px solid var(--line);background:var(--white);color:var(--shark);border-radius:6px;padding:4px 10px;font-size:13px;cursor:pointer}
+.hero{padding-top:72px;padding-bottom:72px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.hero img{width:100%;max-width:340px;justify-self:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--red);font-weight:700}
+h1{font-size:clamp(32px,5vw,50px);line-height:1.1;margin:12px 0 20px}
+.lead{font-size:19px;color:var(--shark-2);max-width:56ch}
+section{padding:60px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--soft)}
+h2{font-size:28px;margin:0 0 8px}
+h2::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;border:3px solid var(--red);margin-right:12px;vertical-align:middle}
+.sub{color:var(--shark-2);margin:0 0 28px;max-width:62ch}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid.five{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--shark-2);font-size:15px}
+.tag{display:inline-block;background:#fdecec;color:var(--red);font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;margin-bottom:10px}
+.num{font-size:13px;font-weight:800;color:var(--red);margin-bottom:8px}
+.dark{background:var(--shark);color:#fff;border-top:0}
+.dark h2::before{border-color:var(--red)}
+.dark .sub,.dark .card p{color:#c9cfd8}
+.dark .card{background:#3c4a5e;border-color:#4a5870}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 24px;margin:0}
+dt{color:var(--shark-2)} dd{margin:0}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600;margin:24px 12px 0 0}
+.btn.ghost{background:transparent;color:var(--shark);border:1px solid var(--shark)}
+footer{padding:28px 0 40px;color:var(--shark-2);font-size:14px;border-top:1px solid var(--line)}
+[data-lang="ro"] .en, [data-lang="en"] .ro{display:none}
+@media (max-width:720px){ .nav nav{display:none} .hero{grid-template-columns:1fr} .hero img{max-width:200px;grid-row:1} dl{grid-template-columns:1fr} dt{margin-top:8px} }
+</style>
+</head>
+<body data-lang="en">
+<header><div class="wrap nav">
+  <a class="brand" href="#"><img src="logo.png" alt="CCTI logo">CCTI</a>
+  <nav>
+    <a href="#focus"><span class="en">Focus</span><span class="ro">Direcții</span></a>
+    <a href="#products"><span class="en">Products</span><span class="ro">Produse</span></a>
+    <a href="#services"><span class="en">Services</span><span class="ro">Servicii</span></a>
+    <a href="#lab"><span class="en">Lab</span><span class="ro">Laborator</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="ro">Contact</span></a>
+  </nav>
+  <button class="lang" id="lang" type="button">RO</button>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <div class="eyebrow"><span class="en">Research Center for Thermodynamics and Informatics</span><span class="ro">Centrul de Cercetări în Termodinamică și Informatică</span></div>
+    <h1><span class="en">Research and development with impact on everyday life</span><span class="ro">Cercetare și dezvoltare cu impact în viața de zi cu zi</span></h1>
+    <p class="lead"><span class="en">Through R&amp;D, we connect technology, people and space to find solutions with impact on everyday life.</span><span class="ro">Prin cercetare și dezvoltare conectăm tehnologia, oamenii și spațiul pentru a găsi soluții cu impact în viața de zi cu zi.</span></p>
+  </div>
+  <img src="logo.png" alt="CCTI — expanding horizons">
+</div>
+
+<section id="focus" class="alt"><div class="wrap">
+  <h2><span class="en">Focus areas</span><span class="ro">Direcții de cercetare</span></h2>
+  <p class="sub"><span class="en">Three directions guide our research and our products.</span><span class="ro">Trei direcții ne ghidează cercetarea și produsele.</span></p>
+  <div class="grid">
+    <div class="card"><div class="num">01</div><h3><span class="en">Clean energy</span><span class="ro">Energie curată</span></h3><p><span class="en">Distributed generation for cities, from wind and atmospheric sources.</span><span class="ro">Generare distribuită pentru orașe, din vânt și din surse atmosferice.</span></p></div>
+    <div class="card"><div class="num">02</div><h3><span class="en">Robots for hostile environments</span><span class="ro">Roboți pentru medii ostile</span></h3><p><span class="en">Machines that work where people should not: biohazard, nuclear, oil &amp; gas.</span><span class="ro">Mașini care lucrează acolo unde oamenii n-ar trebui: risc biologic, nuclear, petrol și gaze.</span></p></div>
+    <div class="card"><div class="num">03</div><h3><span class="en">Climate technologies</span><span class="ro">Tehnologii pentru climă</span></h3><p><span class="en">Cleaner urban air and more resilient infrastructure.</span><span class="ro">Aer urban mai curat și infrastructură mai rezistentă.</span></p></div>
+  </div>
+</div></section>
+
+<section id="products"><div class="wrap">
+  <h2><span class="en">Products</span><span class="ro">Produse</span></h2>
+  <p class="sub"><span class="en">Proprietary solutions developed by CCTI.</span><span class="ro">Soluții proprii dezvoltate de CCTI.</span></p>
+  <div class="grid five">
+    <div class="card"><span class="tag"><span class="en">Energy</span><span class="ro">Energie</span></span><h3>BlueWind Generator</h3><p><span class="en">Multi-source energy and atmospheric water generator for urban environments.</span><span class="ro">Generator de energie din surse multiple și de apă atmosferică pentru mediul urban.</span></p></div>
+    <div class="card"><span class="tag"><span class="en">Energy</span><span class="ro">Energie</span></span><h3>WindCharge</h3><p><span class="en">Wind-powered charging systems for electric vehicles.</span><span class="ro">Sisteme de încărcare a vehiculelor electrice alimentate de vânt.</span></p></div>
+    <div class="card"><span class="tag"><span class="en">Climate</span><span class="ro">Climă</span></span><h3>Aero 360</h3><p><span class="en">Air purification that reduces pollution and pathogens in urban spaces.</span><span class="ro">Purificarea aerului, cu reducerea poluării și a agenților patogeni în spațiile urbane.</span></p></div>
+    <div class="card"><span class="tag"><span class="en">Robotics</span><span class="ro">Robotică</span></span><h3>Prime</h3><p><span class="en">Robotics for hostile, hard-to-reach environments: biohazard, nuclear, oil &amp; gas.</span><span class="ro">Robotică pentru medii ostile și greu accesibile: risc biologic, nuclear, petrol și gaze.</span></p></div>
+    <div class="card"><span class="tag"><span class="en">Infrastructure</span><span class="ro">Infrastructură</span></span><h3>SealShield</h3><p><span class="en">Sustainable sealing solutions for sewerage infrastructure.</span><span class="ro">Soluții sustenabile de etanșare pentru infrastructura de canalizare.</span></p></div>
+  </div>
+</div></section>
+
+<section id="services" class="alt"><div class="wrap">
+  <h2>Synergetic Solutions Services</h2>
+  <p class="sub" style="margin:0"><span class="en">End-to-end consulting for innovative organizations, from concept to market success.</span><span class="ro">Consultanță personalizată, cap-coadă, pentru entități inovatoare, de la concept la succesul pe piață.</span></p>
+</div></section>
+
+<section id="lab" class="dark"><div class="wrap">
+  <h2><span class="en">The lab behind the lab</span><span class="ro">Laboratorul din spatele laboratorului</span></h2>
+  <p class="sub"><span class="en">CCTI is built as a hybrid organization: human researchers and AI agents, one research system.</span><span class="ro">CCTI e construit ca organizație hibridă: cercetători umani și agenți AI, un singur sistem de cercetare.</span></p>
+  <div class="grid">
+    <div class="card"><h3><span class="en">Human + AI</span><span class="ro">Om + AI</span></h3><p><span class="en">Agents propose, verify and challenge. People decide.</span><span class="ro">Agenții propun, verifică și contestă. Oamenii decid.</span></p></div>
+    <div class="card"><h3><span class="en">Verifiable by design</span><span class="ro">Verificabil prin construcție</span></h3><p><span class="en">Nothing counts as done without evidence.</span><span class="ro">Nimic nu e „realizat” fără dovadă.</span></p></div>
+    <div class="card"><h3><span class="en">Learning from every problem</span><span class="ro">Învață din fiecare problemă</span></h3><p><span class="en">Each problem solved makes the next one cheaper.</span><span class="ro">Fiecare problemă rezolvată o face mai ieftină pe următoarea.</span></p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2><span class="en">Company &amp; contact</span><span class="ro">Companie și contact</span></h2>
+  <dl>
+    <dt><span class="en">Legal name</span><span class="ro">Denumire</span></dt><dd>CCTI - Centrul de Cercetări în Termodinamică și Informatică S.R.L.</dd>
+    <dt><span class="en">Activity</span><span class="ro">Activitate</span></dt><dd><span class="en">CAEN 7219 — R&amp;D in natural sciences and engineering</span><span class="ro">CAEN 7219 — cercetare-dezvoltare în științe naturale și inginerie</span></dd>
+    <dt><span class="en">Location</span><span class="ro">Sediu</span></dt><dd>Măgurele, Ilfov, România</dd>
+    <dt>EU PIC</dt><dd>893694175</dd>
+    <dt>D-U-N-S</dt><dd>524094201</dd>
+    <dt>Email</dt><dd><a href="mailto:contact@ccti.ro">contact@ccti.ro</a></dd>
+    <dt><span class="en">Social</span><span class="ro">Rețele</span></dt><dd><a href="https://www.linkedin.com/company/ccti-romania">LinkedIn</a> · <a href="https://twitter.com/CCTI_Romania">X / Twitter</a> · <a href="https://www.facebook.com/C.C.T.I.Romania">Facebook</a> · <a href="https://www.instagram.com/ccti_romania">Instagram</a></dd>
+  </dl>
+  <a class="btn" href="mailto:contact@ccti.ro"><span class="en">Write to us</span><span class="ro">Scrieți-ne</span></a><a class="btn ghost" href="https://www.linkedin.com/company/ccti-romania">LinkedIn</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 CCTI S.R.L. · expanding horizons</div></footer>
+
+<script>
+(function(){
+  var b=document.body, btn=document.getElementById('lang');
+  function set(l){ b.setAttribute('data-lang',l); document.documentElement.lang=l; btn.textContent=l==='en'?'RO':'EN'; }
+  btn.addEventListener('click',function(){ set(b.getAttribute('data-lang')==='en'?'ro':'en'); });
+  if((navigator.language||'').toLowerCase().indexOf('ro')===0) set('ro');
+})();
+</script>
+</body>
+</html>

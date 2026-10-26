@@ -1,2 +1,3 @@
 # ccti-site
-Through R&amp;D, we connect technology, people and space to find solutions with impact on everyday life.
+
+Site-ul public ccti.ro: o pagină statică (index.html + logo.png), găzduită pe Azure Static Web Apps (Free).
