@@ -34,6 +34,7 @@ def page(lang: str, path: str, title: str, description: str, body: str, *,
          alternate: bool = True, jsonld: list | None = None, depth: int = 0) -> None:
     """Scrie o pagină completă. `path` e relativ la rădăcina limbii (ex.: products/aero-360.html)."""
     root = "../" * (depth + (1 if lang == "ro" else 0))
+    home_url = (root or "./") + ("ro/" if lang == "ro" else "")  # "" ar reîncărca pagina curentă
     canonical = url_for(lang, path)
     links = [f'<link rel="canonical" href="{canonical}">']
     if alternate:
@@ -52,7 +53,7 @@ def page(lang: str, path: str, title: str, description: str, body: str, *,
         if alternate else ""
     )
     nav = "".join(
-        f'<a href="{root}{"ro/" if lang == "ro" and not href.startswith("insights") else ""}{href}">{e(label[lang])}</a>'
+        f'<a href="{home_url if href.startswith("#") else root + ("ro/" if lang == "ro" and not href.startswith("insights") else "")}{href}">{e(label[lang])}</a>'
         for href, label in UI["nav"]
     )
     doc = f"""<!doctype html>
@@ -77,14 +78,14 @@ def page(lang: str, path: str, title: str, description: str, body: str, *,
 </head>
 <body>
 <header><div class="wrap nav">
-  <a class="brand" href="{root}{'ro/' if lang == 'ro' else ''}"><img src="{root}logo.png" alt="CCTI logo">CCTI</a>
+  <a class="brand" href="{home_url}"><img src="{root}logo.png" alt="CCTI logo">CCTI</a>
   <nav>{nav}</nav>
   {switch}
 </div></header>
 <main>
 {body}
 </main>
-<footer><div class="wrap">© 2026 CCTI · {e(UI['slogan'])} · <a href="{root}{'ro/' if lang == 'ro' else ''}#contact">{e(UI['contact'][lang])}</a></div></footer>
+<footer><div class="wrap">© 2026 CCTI · {e(UI['slogan'])} · <a href="{home_url}#contact">{e(UI['contact'][lang])}</a></div></footer>
 </body>
 </html>
 """
