@@ -8,7 +8,7 @@ infrastructura internă (AAL) nu se descrie, doar principiile de lucru.
 BASE = "https://ccti.ro"
 
 ORG = {
-    "legal_name": "Centrul de Cercetări în Termodinamică și Informatică S.R.L.",
+    "legal_name": "Centrul de Cercetări în Termodinamică și Informatică",
     "street": "Str. Atomiștilor nr. 407, et. 5",
     "cui": "39614219",
     "reg": "J23/3280/12.07.2018",

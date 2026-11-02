@@ -77,7 +77,7 @@ def page(lang: str, path: str, title: str, description: str, body: str, *,
 <main>
 {body}
 </main>
-<footer><div class="wrap">© 2026 CCTI S.R.L. · {e(UI['slogan'])} · <a href="{root}{'ro/' if lang == 'ro' else ''}#contact">{e(UI['contact'][lang])}</a></div></footer>
+<footer><div class="wrap">© 2026 CCTI · {e(UI['slogan'])} · <a href="{root}{'ro/' if lang == 'ro' else ''}#contact">{e(UI['contact'][lang])}</a></div></footer>
 </body>
 </html>
 """
