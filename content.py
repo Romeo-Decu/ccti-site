@@ -326,7 +326,7 @@ def _a(code, slug, audience, title, dek, sections, refs=()):
 
 
 ARTICLES = [
-    _a("TB-04", "competency-trap", "Innovation leaders · Boards",
+    _a("TB-01", "competency-trap", "Innovation leaders · Boards",
        "Bypassing the Competency Trap: The Psychology of Innovation Resistance",
        "Why capable organizations resist good external ideas — and how to work with that resistance instead of against it.",
        [("The barrier is usually cognitive", [
@@ -340,7 +340,7 @@ ARTICLES = [
        [("Levitt & March (1988), Organizational Learning — Annual Review of Sociology", "https://doi.org/10.1146/annurev.so.14.080188.001535"),
         ("Merton (1940), Bureaucratic Structure and Personality — Social Forces", "https://doi.org/10.2307/2570163"),
         ("Katz & Allen (1982), Investigating the Not Invented Here (NIH) syndrome — R&D Management", "https://doi.org/10.1111/j.1467-9310.1982.tb00478.x")]),
-    _a("TB-01", "llm-governance", "CIOs · Legal & compliance",
+    _a("TB-02", "llm-governance", "CIOs · Legal & compliance",
        "Data Security and LLM Governance in the Enterprise",
        "Deploying large language models without turning proprietary data into a compliance risk.",
        [("The real blocker is data, not capability", [
@@ -354,7 +354,7 @@ ARTICLES = [
        [("NIST AI Risk Management Framework", "https://www.nist.gov/itl/ai-risk-management-framework"),
         ("EU AI Act — Regulation (EU) 2024/1689", "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"),
         ("OWASP Top 10 for LLM Applications", "https://genai.owasp.org/llm-top-10/")]),
-    _a("TB-02", "recursive-language-models", "CTOs · AI engineers",
+    _a("TB-03", "recursive-language-models", "CTOs · AI engineers",
        "Recursive Language Models: A Different Way to Handle Very Long Context",
        "Instead of reading everything at once, the model treats a long prompt as an environment it can explore and query recursively.",
        [("The long-context problem", [
@@ -366,7 +366,7 @@ ARTICLES = [
             "For tasks that require reasoning across many documents — technical archives, regulations, logs — the approach reported better results than reading the full context at once, at comparable or lower cost. It is an active research direction, not yet a standard product, and results depend on the task."])],
        [("Zhang, Kraska & Khattab, Recursive Language Models (arXiv 2512.24601)", "https://arxiv.org/abs/2512.24601"),
         ("Liu et al., Lost in the Middle: How Language Models Use Long Contexts (arXiv 2307.03172)", "https://arxiv.org/abs/2307.03172")]),
-    _a("TB-03", "rlm-vs-rag", "Engineering leads · Technical investors",
+    _a("TB-04", "rlm-vs-rag", "Engineering leads · Technical investors",
        "RLM vs RAG: Two Approaches to the Long-Context Problem",
        "Retrieval narrows the search; recursion deepens the reasoning. In large systems, the two work best together.",
        [("Retrieval-augmented generation (RAG)", [

@@ -27,7 +27,7 @@
 <main>
 
 <article class="wrap page">
-  <div class="eyebrow">[TB-03] · Engineering leads · Technical investors</div>
+  <div class="eyebrow">[TB-04] · Engineering leads · Technical investors</div>
   <h1>RLM vs RAG: Two Approaches to the Long-Context Problem</h1>
   <p class="lead">Retrieval narrows the search; recursion deepens the reasoning. In large systems, the two work best together.</p>
   <h2>Retrieval-augmented generation (RAG)</h2><p>RAG retrieves the passages most similar to the question and gives only those to the model. It is fast and cheap at scale. Its weakness is fragmentation: when the answer depends on how distant pieces relate, similarity search can miss the connection.</p><h2>Recursive language models (RLM)</h2><p>An RLM explores the material programmatically and reasons over the fragments it selects. It handles non-linear, multi-step questions better. Its weakness is cost when it is pointed at a huge, unfiltered corpus.</p><h2>The hybrid pipeline</h2><p>Stage 1 — retrieval narrows billions of tokens to a relevant working set. Stage 2 — recursive reasoning works inside that set, where depth matters more than speed. Each stage covers the other&#x27;s weakness.</p><p>The design questions that decide whether it works are concrete: how large the working set must be so nothing essential is filtered out, which model runs each stage, and how every answer is traced back to its sources so that it can be verified.</p>
