@@ -6,6 +6,7 @@ Fără dependențe externe. Conținutul e în content.py; aici sunt doar șabloa
 
 import html
 import json
+import re
 from pathlib import Path
 
 from content import (ARTICLES, BASE, CONTACT, DIRECTIONS, HOME, LAB, ORG, PRODUCTS, SCENARIOS,
@@ -17,6 +18,12 @@ PAGES: list[tuple[str, str]] = []  # (url, lastmod) pentru sitemap
 
 def e(text: str) -> str:
     return html.escape(text, quote=True)
+
+
+def new_tab(doc: str) -> str:
+    """Linkurile spre alte site-uri se deschid în tab nou, ca vizitatorul să nu iasă din ccti.ro."""
+    return re.sub(r'<a href="(https?://(?!ccti\.ro)[^"]*)"',
+                  r'<a href="\1" target="_blank" rel="noopener noreferrer"', doc)
 
 
 def url_for(lang: str, path: str) -> str:
@@ -89,7 +96,7 @@ def page(lang: str, path: str, title: str, description: str, body: str, *,
     else:
         target = base / path
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(doc, encoding="utf-8")
+    target.write_text(new_tab(doc), encoding="utf-8")
     PAGES.append((canonical, "2026-11-02"))
 
 
@@ -144,10 +151,6 @@ def home(lang: str) -> None:
         for p in PRODUCTS
     )
     lab = "".join(card(item["title"][lang], item["text"][lang]) for item in LAB["principles"])
-    evidence = "".join(
-        f'<li>{e(item["text"][lang])}{"".join(f" · <a href={chr(34)}{link}{chr(34)}>{e(label)}</a>" for label, link in item["links"])}</li>'
-        for item in h["evidence"]
-    )
     contacts = "".join(
         f'<a class="btn{" ghost" if i else ""}" href="mailto:{ORG["email"]}?subject={e(c["subject"])}">{e(c["label"][lang])}</a>'
         for i, c in enumerate(CONTACT)
@@ -185,9 +188,6 @@ def home(lang: str) -> None:
 <section id="lab" class="dark"><div class="wrap">
   <h2>{e(LAB['title'][lang])}</h2><p class="sub">{e(LAB['sub'][lang])}</p>
   <div class="grid">{lab}</div>
-</div></section>
-<section id="evidence"><div class="wrap">
-  <h2>{e(h['ev_h'][lang])}</h2><ul class="evidence">{evidence}</ul>
 </div></section>
 <section id="contact" class="alt"><div class="wrap">
   <h2>{e(h['contact_h'][lang])}</h2><p class="sub">{e(h['contact_sub'][lang])}</p>
@@ -235,10 +235,14 @@ def product(lang: str, p: dict) -> None:
 
 def synergetic(lang: str) -> None:
     s = SYNERGETIC
-    stages = "".join(
-        f'<div class="card"><div class="num">{i:02d}</div><h3>{e(st["title"])}</h3>'
-        f'<p><strong>{e(UI["we_do"][lang])}</strong> {e(st["do"][lang])}</p>'
-        f'<p><strong>{e(UI["result"][lang])}</strong> {e(st["result"][lang])}</p></div>'
+    flow = "".join(
+        f'<li><span class="num">{i:02d}</span><strong>{e(st["title"])}</strong><span class="trl">{st["trl"]}</span></li>'
+        for i, st in enumerate(s["stages"], 1)
+    )
+    trees = "".join(
+        f'<div class="stage"><div class="num">[{i:02d}] · {st["trl"]}</div><h3>{e(st["title"])}</h3>'
+        f'<ul class="tree">{"".join(f"<li>{e(it)}</li>" for it in st["items"][lang])}'
+        f'<li class="deliv"><strong>{e(s["deliverable"][lang])}:</strong> {e(st["deliverable"][lang])}</li></ul></div>'
         for i, st in enumerate(s["stages"], 1)
     )
     body = f"""
@@ -251,7 +255,9 @@ def synergetic(lang: str) -> None:
   <h2>{e(s['strategy_h'][lang])}</h2>
   {''.join(f'<p>{e(par)}</p>' for par in s['strategy'][lang])}
   <h2>{e(s['stages_h'][lang])}</h2><p class="sub">{e(s['stages_sub'][lang])}</p>
-  <div class="grid">{stages}</div>
+  <ol class="flow" aria-label="{e(s['stages_h'][lang])}">{flow}</ol>
+  <p class="gate">◆ {e(s['gate'][lang])} <span class="muted">· {e(s['trl_note'][lang])}</span></p>
+  <div class="stages">{trees}</div>
   <a class="btn" href="mailto:{ORG['email']}?subject={e(CONTACT[2]['subject'])}">{e(CONTACT[2]['label'][lang])}</a>
   <a class="btn ghost" href="{'../' if lang == 'ro' else ''}insights/">{e(UI['insights'][lang])}</a>
 </div>"""
@@ -259,7 +265,14 @@ def synergetic(lang: str) -> None:
           "name": "Synergetic Solutions by CCTI", "slogan": "Beyond Advice",
           "provider": {"@type": "Organization", "name": ORG["legal_name"], "url": BASE + "/"},
           "areaServed": "Worldwide", "url": url_for(lang, "synergetic-solutions.html"),
-          "serviceType": [st["title"] for st in s["stages"]]}
+          "serviceType": [st["title"] for st in s["stages"]],
+          "hasOfferCatalog": {
+              "@type": "OfferCatalog", "name": s["stages_h"][lang],
+              "itemListElement": [
+                  {"@type": "Offer", "position": i, "itemOffered": {
+                      "@type": "Service", "name": st["title"],
+                      "description": "; ".join(st["items"][lang]) + ". " + s["deliverable"][lang] + ": " + st["deliverable"][lang]}}
+                  for i, st in enumerate(s["stages"], 1)]}}
     page(lang, "synergetic-solutions.html", s["meta_title"], s["meta"][lang], body, jsonld=[ld])
 
 
