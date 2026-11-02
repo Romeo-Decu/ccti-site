@@ -1,0 +1,403 @@
+"""Conținutul site-ului ccti.ro. Textele publice se schimbă doar aici; build.py le pune în pagini.
+
+Reguli (Founder, 2.11.2026): sobru, fără autocelebrare, fără promisiuni nedemonstrabile; stadiul real
+al fiecărui produs; scenariile de intervenție sunt marcate ilustrative, fără clienți sau rezultate inventate;
+infrastructura internă (AAL) nu se descrie, doar principiile de lucru.
+"""
+
+BASE = "https://ccti.ro"
+
+ORG = {
+    "legal_name": "Centrul de Cercetări în Termodinamică și Informatică",
+    "street": "Str. Atomiștilor nr. 407, et. 5",
+    "cui": "39614219",
+    "reg": "J23/3280/12.07.2018",
+    "pic": "893694175",
+    "duns": "524094201",
+    "email": "contact@ccti.ro",
+    "social": [
+        ("LinkedIn", "https://www.linkedin.com/company/ccti-romania"),
+        ("X", "https://x.com/CCTI_Romania"),
+        ("Facebook", "https://www.facebook.com/C.C.T.I.Romania"),
+        ("YouTube", "https://www.youtube.com/@CCTI_Romania"),
+        ("Instagram", "https://www.instagram.com/ccti_romania"),
+        ("F6S", "https://www.f6s.com/company/ccti-romania"),
+    ],
+    "same_as": [
+        "https://www.linkedin.com/company/ccti-romania", "https://x.com/CCTI_Romania",
+        "https://www.facebook.com/C.C.T.I.Romania", "https://www.youtube.com/@CCTI_Romania",
+        "https://www.instagram.com/ccti_romania", "https://www.threads.net/@ccti_romania",
+        "https://www.f6s.com/company/ccti-romania", "https://maps.app.goo.gl/xExMBQuPR5uwugDK8",
+    ],
+    "founder_links": ["https://www.linkedin.com/in/romeodecu/", "https://x.com/RomeoDecu",
+                      "https://github.com/Romeo-Decu", "https://bsky.app/profile/romeo-decu.bsky.social"],
+}
+
+T = {
+    "name": {"en": "Center for Research in Thermodynamics and Informatics",
+             "ro": "Centrul de Cercetări în Termodinamică și Informatică"},
+    "legal": {"en": "Legal name", "ro": "Denumire"},
+    "activity": {"en": "Activity", "ro": "Activitate"},
+    "caen": {"en": "CAEN 7219 — R&D in other natural sciences and engineering",
+             "ro": "CAEN 7219 — cercetare-dezvoltare în alte științe naturale și inginerie"},
+    "address": {"en": "Address", "ro": "Sediu"},
+    "reg": {"en": "Trade Register", "ro": "Registrul Comerțului"},
+    "social": {"en": "Social", "ro": "Rețele"},
+}
+
+UI = {
+    "slogan": "Expanding Horizons",
+    "nav": [
+        ("#directions", {"en": "What we do", "ro": "Ce facem"}),
+        ("#products", {"en": "Products", "ro": "Produse"}),
+        ("synergetic-solutions.html", {"en": "Synergetic Solutions", "ro": "Synergetic Solutions"}),
+        ("insights/", {"en": "Insights", "ro": "Insights"}),
+        ("#contact", {"en": "Contact", "ro": "Contact"}),
+    ],
+    "contact": {"en": "Contact", "ro": "Contact"},
+    "more": {"en": "How we work", "ro": "Cum lucrăm"},
+    "insights": {"en": "Insights", "ro": "Insights (EN)"},
+    "back": {"en": "← All products", "ro": "← Toate produsele"},
+    "collab": {"en": "Discuss a collaboration", "ro": "Discutăm o colaborare"},
+    "public": {"en": "Public record", "ro": "Prezență publică"},
+    "we_do": {"en": "What we do:", "ro": "Ce facem:"},
+    "result": {"en": "Result:", "ro": "Rezultat:"},
+    "product_fields": [
+        ("challenge", {"en": "The challenge", "ro": "Provocarea"}),
+        ("approach", {"en": "The approach", "ro": "Abordarea"}),
+        ("status", {"en": "Development status", "ro": "Stadiul dezvoltării"}),
+        ("validation", {"en": "Validation", "ro": "Validare"}),
+        ("next", {"en": "Next step", "ro": "Pasul următor"}),
+    ],
+}
+
+DIRECTIONS = [
+    {"n": "01", "brand": "R&Design Innovation",
+     "title": {"en": "Research, Development & Innovation", "ro": "Cercetare, dezvoltare și inovare"},
+     "text": {"en": "Where research meets design thinking: we generate knowledge and develop ideas into designs that can be tested.",
+              "ro": "Acolo unde cercetarea întâlnește gândirea de proiectare: generăm cunoaștere și transformăm ideile în soluții care pot fi testate."}},
+    {"n": "02", "brand": "Connecting Technology",
+     "title": {"en": "Innovative & Useful Solutions", "ro": "Soluții inovatoare și utile"},
+     "text": {"en": "Bridging technologies, people and ideas: we turn research into products for real-world problems.",
+              "ro": "Legăm tehnologii, oameni și idei: transformăm cercetarea în produse pentru probleme reale."}},
+    {"n": "03", "brand": "Synergetic Solutions",
+     "title": {"en": "Innovation Strategy & Business Development", "ro": "Strategie de inovare și dezvoltare de afaceri"},
+     "text": {"en": "Beyond Advice: we help innovative organizations turn opportunities into concrete development.",
+              "ro": "Beyond Advice: ajutăm entitățile inovatoare să transforme oportunitățile în dezvoltare concretă."}},
+]
+
+HOME = {
+    "meta": {"en": "CCTI — Center for Research in Thermodynamics and Informatics (Măgurele, Romania). R&D in clean energy, robotics for hostile environments and climate technologies; innovation strategy through Synergetic Solutions.",
+             "ro": "CCTI — Centrul de Cercetări în Termodinamică și Informatică (Măgurele). Cercetare-dezvoltare în energie curată, robotică pentru medii ostile și tehnologii pentru climă; strategie de inovare prin Synergetic Solutions."},
+    "h1": {"en": "Connecting Technology, People, and Space for Everyday Impact",
+           "ro": "Conectăm tehnologia, oamenii și spațiul pentru impact în viața de zi cu zi"},
+    "lead": {"en": "A research center that turns knowledge into useful solutions and helps innovative organizations grow.",
+             "ro": "Un centru de cercetare care transformă cunoașterea în soluții utile și ajută organizațiile inovatoare să crească."},
+    "position": "Adaptive by design. Intelligent by nature. Impactful by purpose.",
+    "dir_h": {"en": "Three directions, one cycle", "ro": "Trei direcții, un singur ciclu"},
+    "dir_sub": {"en": "Research → Solutions → Business Development. Each direction feeds the next.",
+                "ro": "Cercetare → Soluții → Dezvoltare de afaceri. Fiecare direcție o alimentează pe următoarea."},
+    "focus_h": {"en": "Research focus areas", "ro": "Domenii de cercetare"},
+    "focus_sub": {"en": "Where we build expertise. Products may cross more than one area.",
+                  "ro": "Unde acumulăm expertiză. Un produs poate traversa mai multe domenii."},
+    "focus": [
+        {"title": {"en": "Clean energy", "ro": "Energie curată"},
+         "text": {"en": "Distributed generation for cities, from wind and atmospheric sources.",
+                  "ro": "Generare distribuită pentru orașe, din vânt și din surse atmosferice."}},
+        {"title": {"en": "Robots for hostile environments", "ro": "Roboți pentru medii ostile"},
+         "text": {"en": "Machines that work where people should not: biohazard, nuclear, oil & gas.",
+                  "ro": "Mașini care lucrează acolo unde oamenii n-ar trebui: risc biologic, nuclear, petrol și gaze."}},
+        {"title": {"en": "Climate technologies", "ro": "Tehnologii pentru climă"},
+         "text": {"en": "Cleaner urban air and more resilient infrastructure.",
+                  "ro": "Aer urban mai curat și infrastructură mai rezistentă."}},
+    ],
+    "prod_h": {"en": "Products in development", "ro": "Produse în dezvoltare"},
+    "prod_sub": {"en": "Proprietary technologies, each shown with its real development stage (TRL).",
+                 "ro": "Tehnologii proprii, fiecare cu stadiul real de dezvoltare (TRL)."},
+    "ev_h": {"en": "Track record", "ro": "Rezultate verificabile"},
+    "evidence": [
+        {"text": {"en": "Aero 360 — EIT Climate-KIC ClimateLaunchpad: 3rd place.",
+                  "ro": "Aero 360 — EIT Climate-KIC ClimateLaunchpad: locul 3."},
+         "links": []},
+        {"text": {"en": "Aero 360 in the press and in the Romanian smart-city community.",
+                  "ro": "Aero 360 în presă și în comunitatea smart city din România."},
+         "links": [("Libertatea", "https://www.libertatea.ro/stiri/institut-romanesc-ezvoltat-purificatoarecuratarea-aerul-marile-orase-3135159"),
+                   ("EVZ", "https://evz.ro/purificator-minune-inventat-de-romani-are-efectul-unei-paduri.html"),
+                   ("Smart City Romania", "https://app.smartcityromania.ro/aero-360-solutie-de-reducere-a-poluarii-si-de-diminuare-a-agentilor-patogeni-in-mediul-urban/")]},
+        {"text": {"en": "Robotics for biohazard environments, discussed in the press during the COVID-19 response.",
+                  "ro": "Robotica pentru medii cu risc biologic, prezentată în presă în timpul răspunsului la COVID-19."},
+         "links": [("Ziare.com", "https://ziare.com/internet-si-tehnologie/tehnologie/covid-19-imprimantele-3d-si-robotii-adaptati-la-biohazard-pot-salva-vieti-daca-medicii-si-it-istii-isi-dau-mana-virtual-desigur-1602494")]},
+        {"text": {"en": "Ten articles on research culture, impact and innovation strategy, published by CCTI.",
+                  "ro": "Zece articole despre cultura cercetării, impact și strategia de inovare, publicate de CCTI."},
+         "links": [("LinkedIn", "https://www.linkedin.com/company/ccti-romania")]},
+    ],
+    "contact_h": {"en": "Company & contact", "ro": "Companie și contact"},
+    "contact_sub": {"en": "Tell us what kind of conversation you want to start.",
+                    "ro": "Spuneți-ne ce fel de discuție doriți să începem."},
+}
+
+CONTACT = [
+    {"label": {"en": "R&D collaboration", "ro": "Colaborare în cercetare"},
+     "subject": "R&D collaboration"},
+    {"label": {"en": "Technology & product collaboration", "ro": "Colaborare pe tehnologie și produse"},
+     "subject": "Technology & product collaboration"},
+    {"label": {"en": "Innovation strategy (Synergetic Solutions)", "ro": "Strategie de inovare (Synergetic Solutions)"},
+     "subject": "Synergetic Solutions — innovation strategy"},
+]
+
+LAB = {
+    "title": {"en": "The lab behind the lab", "ro": "Laboratorul din spatele laboratorului"},
+    "sub": {"en": "The standard we hold our own work to.", "ro": "Standardul după care ne judecăm propria muncă."},
+    "principles": [
+        {"title": {"en": "Human + AI, people decide", "ro": "Om + AI, oamenii decid"},
+         "text": {"en": "We use AI to propose, verify and challenge. Judgment and accountability stay human.",
+                  "ro": "Folosim AI ca să propunem, să verificăm și să contestăm. Judecata și responsabilitatea rămân umane."}},
+        {"title": {"en": "Evidence over assumptions", "ro": "Dovezi, nu presupuneri"},
+         "text": {"en": "Nothing counts as done without evidence. Hypotheses are tested before major commitments.",
+                  "ro": "Nimic nu e „realizat” fără dovadă. Ipotezele se testează înainte de angajamente mari."}},
+        {"title": {"en": "Learning from every problem", "ro": "Învățăm din fiecare problemă"},
+         "text": {"en": "Each problem solved leaves reusable knowledge and makes the next one cheaper.",
+                  "ro": "Fiecare problemă rezolvată lasă cunoaștere reutilizabilă și o face mai ieftină pe următoarea."}},
+    ],
+}
+
+
+def _p(name, slug, domain, stage, short, meta, challenge, approach, status, validation, nxt, links, evidence=()):
+    return {"name": name, "slug": slug, "domain": domain, "stage": stage, "short": short, "meta": meta,
+            "challenge": challenge, "approach": approach, "status": status, "validation": validation,
+            "next": nxt, "links": list(links), "evidence": list(evidence)}
+
+
+_NO_PUBLIC = {"en": "No public validation results yet. Technical data is available to partners under NDA.",
+              "ro": "Nu există încă rezultate publice de validare. Datele tehnice sunt disponibile partenerilor, sub NDA."}
+
+PRODUCTS = [
+    _p("BlueWind Generator", "bluewind-generator",
+       {"en": "Clean energy · Water", "ro": "Energie curată · Apă"}, {"en": "TRL 4", "ro": "TRL 4"},
+       {"en": "Multi-source energy and atmospheric water generator for urban environments.",
+        "ro": "Generator de energie din surse multiple și de apă atmosferică pentru mediul urban."},
+       {"en": "BlueWind Generator by CCTI: multi-source renewable energy and atmospheric water generation for cities. Development stage TRL 4.",
+        "ro": "BlueWind Generator (CCTI): energie regenerabilă din surse multiple și apă din atmosferă pentru orașe. Stadiu TRL 4."},
+       {"en": "Cities need decentralized energy and new sources of water, without more strain on the grid.",
+        "ro": "Orașele au nevoie de energie descentralizată și de surse noi de apă, fără să încarce suplimentar rețeaua."},
+       {"en": "One unit that combines several renewable sources and extracts water from the atmosphere.",
+        "ro": "O singură unitate care combină mai multe surse regenerabile și extrage apă din atmosferă."},
+       {"en": "TRL 4: technology validated in the laboratory.", "ro": "TRL 4: tehnologie validată în laborator."},
+       _NO_PUBLIC,
+       {"en": "Pilot partners for urban field testing.", "ro": "Parteneri pilot pentru testare în mediu urban."},
+       [("LinkedIn", "https://www.linkedin.com/products/ccti-romania-bluewind-generator/"),
+        ("Facebook", "https://www.facebook.com/AllGreenPower")]),
+    _p("WindCharge", "windcharge",
+       {"en": "Clean energy · Mobility", "ro": "Energie curată · Mobilitate"}, {"en": "TRL 3", "ro": "TRL 3"},
+       {"en": "Wind-powered charging systems for electric vehicles.",
+        "ro": "Sisteme de încărcare a vehiculelor electrice alimentate de vânt."},
+       {"en": "WindCharge by CCTI: wind-powered charging for electric vehicles, reducing dependence on the grid. Development stage TRL 3.",
+        "ro": "WindCharge (CCTI): încărcarea vehiculelor electrice din energia vântului, cu dependență mai mică de rețea. Stadiu TRL 3."},
+       {"en": "Electric vehicle charging adds load to grids that are not always ready for it.",
+        "ro": "Încărcarea vehiculelor electrice adaugă sarcină pe rețele care nu sunt mereu pregătite."},
+       {"en": "Charging points powered directly by local wind generation.",
+        "ro": "Puncte de încărcare alimentate direct din generare eoliană locală."},
+       {"en": "TRL 3: experimental proof of concept.", "ro": "TRL 3: dovada experimentală a conceptului."},
+       _NO_PUBLIC,
+       {"en": "Laboratory validation and technical partners.", "ro": "Validare în laborator și parteneri tehnici."},
+       [("LinkedIn", "https://www.linkedin.com/products/ccti-romania-windcharge/"),
+        ("Facebook", "https://www.facebook.com/ChargingElectricCars")]),
+    _p("Aero 360", "aero-360",
+       {"en": "Climate · Air quality", "ro": "Climă · Calitatea aerului"}, {"en": "TRL 4", "ro": "TRL 4"},
+       {"en": "Outdoor air purification that reduces pollution and pathogens in urban spaces.",
+        "ro": "Purificarea aerului exterior, cu reducerea poluării și a agenților patogeni în spațiile urbane."},
+       {"en": "Aero 360 by CCTI: outdoor air purification for cities, reducing pollutants and airborne pathogens. Development stage TRL 4.",
+        "ro": "Aero 360 (CCTI): purificarea aerului exterior în orașe, cu reducerea poluanților și a agenților patogeni. Stadiu TRL 4."},
+       {"en": "Urban air pollution and airborne biological contaminants in dense public spaces.",
+        "ro": "Poluarea aerului urban și contaminanții biologici din aer în spațiile publice aglomerate."},
+       {"en": "Outdoor purification units designed for streets, squares and transport hubs.",
+        "ro": "Unități de purificare exterioare, gândite pentru străzi, piețe și noduri de transport."},
+       {"en": "TRL 4: technology validated in the laboratory.", "ro": "TRL 4: tehnologie validată în laborator."},
+       {"en": "3rd place in EIT Climate-KIC ClimateLaunchpad; presented in the Romanian smart-city community.",
+        "ro": "Locul 3 la EIT Climate-KIC ClimateLaunchpad; prezentat în comunitatea smart city din România."},
+       {"en": "Urban pilot and validation partners.", "ro": "Pilot urban și parteneri de validare."},
+       [("LinkedIn", "https://www.linkedin.com/products/ccti-romania-aero-360/"),
+        ("Facebook", "https://www.facebook.com/OutdoorAirPurification")],
+       [("Libertatea", "https://www.libertatea.ro/stiri/institut-romanesc-ezvoltat-purificatoarecuratarea-aerul-marile-orase-3135159"),
+        ("EVZ", "https://evz.ro/purificator-minune-inventat-de-romani-are-efectul-unei-paduri.html"),
+        ("Smart City Romania", "https://app.smartcityromania.ro/aero-360-solutie-de-reducere-a-poluarii-si-de-diminuare-a-agentilor-patogeni-in-mediul-urban/")]),
+    _p("Prime", "prime",
+       {"en": "Robotics", "ro": "Robotică"}, {"en": "TRL 4", "ro": "TRL 4"},
+       {"en": "Robotics for hostile, hard-to-reach environments: biohazard, nuclear, oil & gas.",
+        "ro": "Robotică pentru medii ostile și greu accesibile: risc biologic, nuclear, petrol și gaze."},
+       {"en": "Prime by CCTI: robots for hostile environments — biohazard, nuclear, oil and gas. Development stage TRL 4.",
+        "ro": "Prime (CCTI): roboți pentru medii ostile — risc biologic, nuclear, petrol și gaze. Stadiu TRL 4."},
+       {"en": "Some work must be done where people should not go.",
+        "ro": "Unele lucrări trebuie făcute acolo unde oamenii n-ar trebui să meargă."},
+       {"en": "Robotic platforms adapted to biological, radiological and industrial hazards.",
+        "ro": "Platforme robotice adaptate riscurilor biologice, radiologice și industriale."},
+       {"en": "TRL 4: technology validated in the laboratory.", "ro": "TRL 4: tehnologie validată în laborator."},
+       {"en": "Biohazard robotics presented publicly during the COVID-19 response.",
+        "ro": "Robotica pentru risc biologic, prezentată public în timpul răspunsului la COVID-19."},
+       {"en": "Industrial partners for application-specific validation.",
+        "ro": "Parteneri industriali pentru validare pe aplicații concrete."},
+       [("LinkedIn", "https://www.linkedin.com/products/ccti-romania-prime/"),
+        ("Facebook", "https://www.facebook.com/C.C.T.I.Robotics")],
+       [("Ziare.com", "https://ziare.com/internet-si-tehnologie/tehnologie/covid-19-imprimantele-3d-si-robotii-adaptati-la-biohazard-pot-salva-vieti-daca-medicii-si-it-istii-isi-dau-mana-virtual-desigur-1602494")]),
+    _p("SealShield", "sealshield",
+       {"en": "Infrastructure", "ro": "Infrastructură"}, {"en": "Prototype", "ro": "Prototip"},
+       {"en": "Sustainable sealing solutions for sewerage infrastructure.",
+        "ro": "Soluții sustenabile de etanșare pentru infrastructura de canalizare."},
+       {"en": "SealShield by CCTI: sustainable sealing for sewerage infrastructure. Prototype stage.",
+        "ro": "SealShield (CCTI): etanșare sustenabilă pentru infrastructura de canalizare. Stadiu de prototip."},
+       {"en": "Leaks in sewerage networks waste water, damage soil and are expensive to repair.",
+        "ro": "Scurgerile din rețelele de canalizare risipesc apă, afectează solul și sunt scumpe de reparat."},
+       {"en": "Durable sealing for joints and connections, designed for long service life.",
+        "ro": "Etanșare durabilă pentru îmbinări și racorduri, gândită pentru o durată lungă de viață."},
+       {"en": "Prototype.", "ro": "Prototip."},
+       _NO_PUBLIC,
+       {"en": "Field testing with network operators.", "ro": "Testare în teren cu operatori de rețea."},
+       [("LinkedIn", "https://www.linkedin.com/products/ccti-romania-sealshield/"),
+        ("Facebook", "https://www.facebook.com/SewerageSystems")]),
+]
+
+SYNERGETIC = {
+    "meta_title": "Synergetic Solutions by CCTI — Innovation Strategy & Business Development",
+    "meta": {"en": "Synergetic Solutions by CCTI: modular innovation strategy and business development for innovative organizations — from concept and feasibility to prototyping and market development. Beyond Advice.",
+             "ro": "Synergetic Solutions (CCTI): strategie de inovare și dezvoltare de afaceri, modulară, pentru entități inovatoare — de la concept și fezabilitate la prototip și piață. Beyond Advice."},
+    "h1": "Beyond the Core",
+    "sub": "Expand Your Strategies Without Abandoning Your Roots",
+    "tagline": "Synergetic Solutions | Beyond Advice",
+    "intro_short": {"en": "From strategic insight to practical implementation.",
+                    "ro": "De la perspectiva strategică la implementarea practică."},
+    "intro": {
+        "en": ["At CCTI we do not treat innovation as a theoretical exercise, and we do not produce reports for their own sake. Synergetic Solutions is how we help organizations turn new concepts into viable commercial and technological results.",
+               "We do not rewrite your business. We build on the foundation you already have (your roots) and step in where conventional advice stops (beyond advice): with applied research, modelling, and the ability to develop and validate in our own laboratory."],
+        "ro": ["La CCTI nu privim inovația ca pe un exercițiu teoretic și nu producem rapoarte de dragul lor. Synergetic Solutions este felul în care ajutăm organizațiile să transforme conceptele noi în rezultate comerciale și tehnologice viabile.",
+               "Nu vă rescriem afacerea. Construim pe fundația pe care o aveți deja (your roots) și intervenim acolo unde consultanța obișnuită se oprește (beyond advice): cu cercetare aplicată, modelare și capacitatea de a dezvolta și valida în propriul laborator."],
+    },
+    "strategy_h": {"en": "Strategy, practiced", "ro": "Strategie, practicată"},
+    "strategy": {
+        "en": ["Our approach is metastrategy: understanding reality as it is, not as we would like it to be — beyond perceptions and points of view — and analysing the consequences of every action and every inaction before acting, in order to achieve your interests and shape both the present and the future.", "In practice, this means one thing: deliberately directing actions and inactions to control their consequences and achieve your interests.",
+               "Our strategic consulting draws on more than twenty years of commercial leadership, business development and organizational transformation across international, multi-industry companies, and on applied research in our own laboratory.",
+               "We do not arrive with ready-made answers and we do not deliver paper. You know your organization better than anyone; we bring method, evidence and an outside view, and we work alongside your team until the result can be verified."],
+        "ro": ["Abordarea noastră este metastrategia: înțelegerea realității așa cum este, nu cum ne-am dori să fie — dincolo de percepții sau perspective — și analiza consecințelor oricărei acțiuni sau inacțiuni înainte de a acționa, pentru atingerea intereselor dumneavoastră și modelarea prezentului și a viitorului.", "În practică, asta înseamnă un singur lucru: direcționarea deliberată a acțiunilor și inacțiunilor, pentru controlul consecințelor și realizarea intereselor.",
+               "Consultanța noastră strategică se sprijină pe peste douăzeci de ani de conducere comercială, dezvoltare de afaceri și transformare organizațională în companii internaționale, din mai multe industrii, și pe cercetarea aplicată din propriul laborator.",
+               "Nu venim cu răspunsuri gata făcute și nu livrăm hârtii. Vă cunoașteți organizația mai bine decât oricine; noi aducem metodă, dovezi și o privire din afară și lucrăm alături de echipa dumneavoastră până când rezultatul poate fi verificat."],
+    },
+    "home_lead": {"en": "Strategic consulting for innovative organizations — from opportunity and strategy to validation, development and market.",
+                  "ro": "Consultanță strategică pentru entități inovatoare — de la oportunitate și strategie la validare, dezvoltare și piață."},
+    "stages_h": {"en": "From concept to result: a modular path", "ro": "De la concept la rezultat: un drum modular"},
+    "stages_sub": {"en": "Identify the stage your initiative is in. You can engage us for one stage or for the whole path.",
+                   "ro": "Identificați etapa în care se află inițiativa. Ne puteți implica într-o singură etapă sau pe tot drumul."},
+    "stages": [
+        {"title": "Opportunity & Concept Development",
+         "do": {"en": "We define the problem, analyse the technological opportunity and model the concept.",
+                "ro": "Definim problema, analizăm oportunitatea tehnologică și modelăm conceptul."},
+         "result": {"en": "A clear direction and a sound technical basis before major resources are committed.",
+                    "ro": "O direcție clară și o bază tehnică solidă înainte de alocarea resurselor mari."}},
+        {"title": "Innovation & Business Strategy",
+         "do": {"en": "We design the innovation strategy, the business model and the development plan.",
+                "ro": "Proiectăm strategia de inovare, modelul de afaceri și planul de dezvoltare."},
+         "result": {"en": "An innovation with a commercial structure that can sustain revenue.",
+                    "ro": "O inovație cu o structură comercială capabilă să susțină venituri."}},
+        {"title": "Feasibility & Validation",
+         "do": {"en": "We test the hypotheses through applied research (thermodynamics, informatics, engineering) and technical-commercial analysis.",
+                "ro": "Testăm ipotezele prin cercetare aplicată (termodinamică, informatică, inginerie) și analiză tehnico-comercială."},
+         "result": {"en": "Evidence on whether — and under what conditions — the solution works, before you scale it.",
+                    "ro": "Dovezi despre dacă — și în ce condiții — soluția funcționează, înainte de a o extinde."}},
+        {"title": "Development & Implementation",
+         "do": {"en": "We support prototyping, testing and integration into operations.",
+                "ro": "Sprijinim prototiparea, testarea și integrarea în operațiuni."},
+         "result": {"en": "A working physical or digital product, ready for operation.",
+                    "ro": "Un produs fizic sau digital funcțional, pregătit de operare."}},
+        {"title": "Market Development",
+         "do": {"en": "We build the go-to-market strategy, identify commercial opportunities and structure partnerships.",
+                "ro": "Construim strategia de lansare, identificăm oportunitățile comerciale și structurăm parteneriatele."},
+         "result": {"en": "First customers and a measurable test of commercial traction.",
+                    "ro": "Primii clienți și un test măsurabil al tracțiunii comerciale."}},
+    ],
+}
+
+
+def _a(code, slug, audience, title, dek, sections, refs=()):
+    return {"code": code, "slug": slug, "audience": audience, "title": title, "dek": dek,
+            "sections": sections, "refs": list(refs)}
+
+
+ARTICLES = [
+    _a("TB-04", "competency-trap", "Innovation leaders · Boards",
+       "Bypassing the Competency Trap: The Psychology of Innovation Resistance",
+       "Why capable organizations resist good external ideas — and how to work with that resistance instead of against it.",
+       [("The barrier is usually cognitive", [
+           "Innovation in established organizations rarely fails for lack of technology or money. It fails because past success shapes what people can see. Research on organizational learning calls this the competency trap: getting better at the current routine makes a better alternative look worse than it is.",
+           "Two related effects reinforce it. Trained incapacity — Veblen's term, developed by Merton — describes how specialized expertise can blind people to a changed situation. The 'Not Invented Here' effect, documented in R&D teams by Katz and Allen, is the tendency to undervalue ideas that come from outside the group."]),
+        ("What this means for an outside partner", [
+            "An external advisor who arrives to replace the existing way of working triggers exactly these defences. The useful question is not 'how do we convince them', but 'how do we make the new option testable on their terms'.",
+            "We are not smarter than the people who built your organization, and we do not hand over reports to be filed. Our approach follows three rules: build on the existing foundation rather than against it (your roots); turn proposals into hypotheses with explicit evidence, so the decision rests on the test and not on who proposed it (beyond advice); and work in modular stages, so the organization can adopt change at a pace it can verify."]),
+        ("A practical test", [
+            "Before proposing a change, write down what result would show that the current approach is still the better one. If no result could show that, the proposal is an opinion, not a strategy."])],
+       [("Levitt & March (1988), Organizational Learning — Annual Review of Sociology", "https://doi.org/10.1146/annurev.so.14.080188.001535"),
+        ("Merton (1940), Bureaucratic Structure and Personality — Social Forces", "https://doi.org/10.2307/2570163"),
+        ("Katz & Allen (1982), Investigating the Not Invented Here (NIH) syndrome — R&D Management", "https://doi.org/10.1111/j.1467-9310.1982.tb00478.x")]),
+    _a("TB-01", "llm-governance", "CIOs · Legal & compliance",
+       "Data Security and LLM Governance in the Enterprise",
+       "Deploying large language models without turning proprietary data into a compliance risk.",
+       [("The real blocker is data, not capability", [
+           "Most organizations can already get value from language models. What stops them is the question of where their data goes: source code, contracts, technical drawings and customer records sent to an external API leave the organization's control."]),
+        ("Governance as architecture, not only policy", [
+            "Data boundaries. Sensitive workloads run on infrastructure the organization controls — on-premise or a private cloud tenant — so that confidential material does not leave the perimeter and is not used to train third-party models.",
+            "Control of the flow. Inputs from documents, web pages and tools are treated as data, never as instructions; this is the main defence against indirect prompt injection, now the most common attack on AI agents.",
+            "Accountability. Every model output that feeds a decision is logged with its sources, so that a human can verify it and remains responsible for the decision."]),
+        ("Alignment with emerging frameworks", [
+            "These controls map onto the risk-management practices of the NIST AI Risk Management Framework and the obligations introduced by the EU AI Act. No architecture removes risk entirely; the goal is risk that is known, bounded and auditable."])],
+       [("NIST AI Risk Management Framework", "https://www.nist.gov/itl/ai-risk-management-framework"),
+        ("EU AI Act — Regulation (EU) 2024/1689", "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"),
+        ("OWASP Top 10 for LLM Applications", "https://genai.owasp.org/llm-top-10/")]),
+    _a("TB-02", "recursive-language-models", "CTOs · AI engineers",
+       "Recursive Language Models: A Different Way to Handle Very Long Context",
+       "Instead of reading everything at once, the model treats a long prompt as an environment it can explore and query recursively.",
+       [("The long-context problem", [
+           "Language models degrade when relevant information sits deep inside a very long input: accuracy drops for facts in the middle of the context, and cost grows with every token read. Simply enlarging the context window does not remove the problem."]),
+        ("What a recursive language model does", [
+            "In the recursive approach proposed by Zhang, Kraska and Khattab, the long prompt is not pushed into the model's context. It is loaded as a variable in an execution environment. The model writes code to inspect, split and search it, and calls itself (or a smaller model) on the fragments that matter.",
+            "The model therefore decides what to read, in what order and how deeply — closer to how an analyst works through a large archive than to reading a book cover to cover."]),
+        ("Why it matters in practice", [
+            "For tasks that require reasoning across many documents — technical archives, regulations, logs — the approach reported better results than reading the full context at once, at comparable or lower cost. It is an active research direction, not yet a standard product, and results depend on the task."])],
+       [("Zhang, Kraska & Khattab, Recursive Language Models (arXiv 2512.24601)", "https://arxiv.org/abs/2512.24601"),
+        ("Liu et al., Lost in the Middle: How Language Models Use Long Contexts (arXiv 2307.03172)", "https://arxiv.org/abs/2307.03172")]),
+    _a("TB-03", "rlm-vs-rag", "Engineering leads · Technical investors",
+       "RLM vs RAG: Two Approaches to the Long-Context Problem",
+       "Retrieval narrows the search; recursion deepens the reasoning. In large systems, the two work best together.",
+       [("Retrieval-augmented generation (RAG)", [
+           "RAG retrieves the passages most similar to the question and gives only those to the model. It is fast and cheap at scale. Its weakness is fragmentation: when the answer depends on how distant pieces relate, similarity search can miss the connection."]),
+        ("Recursive language models (RLM)", [
+            "An RLM explores the material programmatically and reasons over the fragments it selects. It handles non-linear, multi-step questions better. Its weakness is cost when it is pointed at a huge, unfiltered corpus."]),
+        ("The hybrid pipeline", [
+            "Stage 1 — retrieval narrows billions of tokens to a relevant working set. Stage 2 — recursive reasoning works inside that set, where depth matters more than speed. Each stage covers the other's weakness.",
+            "The design questions that decide whether it works are concrete: how large the working set must be so nothing essential is filtered out, which model runs each stage, and how every answer is traced back to its sources so that it can be verified."])],
+       [("Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (arXiv 2005.11401)", "https://arxiv.org/abs/2005.11401"),
+        ("Zhang, Kraska & Khattab, Recursive Language Models (arXiv 2512.24601)", "https://arxiv.org/abs/2512.24601")]),
+]
+
+SCENARIOS = [
+    _a("SC-01", "scenario-secure-document-intelligence", "Industrial organizations",
+       "Scenario: Secure Intelligence over a Large Technical Archive",
+       "How we would approach an organization that wants AI answers from hundreds of thousands of internal documents without exposing them.",
+       [("The situation", [
+           "An industrial company holds manuals, patents and sensor logs it cannot send to external AI services. Simple retrieval tools give fragmented answers; long-context models are costly and hard to control."]),
+        ("How we would approach it", [
+            "Stage 1 (Opportunity & Concept): define the questions that actually matter to engineers and the cost of a wrong answer. Stage 3 (Feasibility & Validation): build a small hybrid RAG-RLM pipeline on private infrastructure and measure it against a set of questions with known answers, before any scale-up.",
+            "What the client would receive: an architecture decision backed by measured accuracy, cost and data-boundary checks — or the evidence that the approach is not worth it for their case."])]),
+    _a("SC-02", "scenario-market-positioning", "Deep-tech & climate-tech companies",
+       "Scenario: Market Positioning for a Deep-Tech Company Entering Regulated Markets",
+       "How we would approach a hardware company whose go-to-market plan relies on outdated assumptions.",
+       [("The situation", [
+           "A climate-tech company is preparing to enter EU and US markets. Its commercial plan was built on static market data, while regulation in its field is changing quickly."]),
+        ("How we would approach it", [
+            "Stage 2 (Innovation & Business Strategy): map the interests of regulators, buyers and partners, and turn the plan's key assumptions into explicit hypotheses. Stage 5 (Market Development): model a small set of scenarios and define the early signals that would confirm or refute each one.",
+            "What the client would receive: a positioning strategy with stated assumptions, the signals to watch, and the decisions to take if the signals change — instead of a single forecast."])]),
+    _a("SC-03", "scenario-technical-due-diligence", "Investors · Robotics start-ups",
+       "Scenario: Technical Due Diligence for a Robotics Start-up",
+       "How we would approach an investor who needs to know whether a robotic prototype does what its founders claim.",
+       [("The situation", [
+           "A fund is considering an investment in a start-up building robots for biohazard environments. The declared performance comes mostly from the start-up's own tests."]),
+        ("How we would approach it", [
+            "Stage 3 (Feasibility & Validation): define, before testing, the claims that decide the investment; combine a simulation model of the system with targeted physical tests of critical sub-assemblies and a review of the control software.",
+            "What the client would receive: an independent technical report stating which claims were confirmed, which were not, and what it would take to fix the gaps — useful to the investor and to the start-up alike."])]),
+]
