@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recursive Language Models: A Different Way to Handle Very Long Context — CCTI Insights</title>
+<meta name="description" content="Instead of reading everything at once, the model treats a long prompt as an environment it can explore and query recursively.">
+<link rel="canonical" href="https://ccti.ro/insights/recursive-language-models.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CCTI">
+<meta property="og:title" content="Recursive Language Models: A Different Way to Handle Very Long Context — CCTI Insights">
+<meta property="og:description" content="Instead of reading everything at once, the model treats a long prompt as an environment it can explore and query recursively.">
+<meta property="og:url" content="https://ccti.ro/insights/recursive-language-models.html">
+<meta property="og:image" content="https://ccti.ro/logo.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../logo.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Recursive Language Models: A Different Way to Handle Very Long Context", "description": "Instead of reading everything at once, the model treats a long prompt as an environment it can explore and query recursively.", "inLanguage": "en", "author": {"@type": "Organization", "name": "CCTI"}, "publisher": {"@type": "Organization", "name": "Centrul de Cercetări în Termodinamică și Informatică S.R.L.", "logo": "https://ccti.ro/logo.png"}, "datePublished": "2026-11-02", "url": "https://ccti.ro/insights/recursive-language-models.html"}</script>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="../"><img src="../logo.png" alt="CCTI logo">CCTI</a>
+  <nav><a href="../#directions">What we do</a><a href="../#products">Products</a><a href="../synergetic-solutions.html">Synergetic Solutions</a><a href="../insights/">Insights</a><a href="../#contact">Contact</a></nav>
+  
+</div></header>
+<main>
+
+<article class="wrap page">
+  <div class="eyebrow">[TB-02] · CTOs · AI engineers</div>
+  <h1>Recursive Language Models: A Different Way to Handle Very Long Context</h1>
+  <p class="lead">Instead of reading everything at once, the model treats a long prompt as an environment it can explore and query recursively.</p>
+  <h2>The long-context problem</h2><p>Language models degrade when relevant information sits deep inside a very long input: accuracy drops for facts in the middle of the context, and cost grows with every token read. Simply enlarging the context window does not remove the problem.</p><h2>What a recursive language model does</h2><p>In the recursive approach proposed by Zhang, Kraska and Khattab, the long prompt is not pushed into the model&#x27;s context. It is loaded as a variable in an execution environment. The model writes code to inspect, split and search it, and calls itself (or a smaller model) on the fragments that matter.</p><p>The model therefore decides what to read, in what order and how deeply — closer to how an analyst works through a large archive than to reading a book cover to cover.</p><h2>Why it matters in practice</h2><p>For tasks that require reasoning across many documents — technical archives, regulations, logs — the approach reported better results than reading the full context at once, at comparable or lower cost. It is an active research direction, not yet a standard product, and results depend on the task.</p>
+  <h2>References</h2><ul class="evidence"><li><a href="https://arxiv.org/abs/2512.24601">Zhang, Kraska &amp; Khattab, Recursive Language Models (arXiv 2512.24601)</a></li><li><a href="https://arxiv.org/abs/2307.03172">Liu et al., Lost in the Middle: How Language Models Use Long Contexts (arXiv 2307.03172)</a></li></ul>
+  <a class="btn ghost" href="./">← Insights</a>
+</article>
+</main>
+<footer><div class="wrap">© 2026 CCTI S.R.L. · Expanding Horizons · <a href="../#contact">Contact</a></div></footer>
+</body>
+</html>

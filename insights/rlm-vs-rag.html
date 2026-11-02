@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RLM vs RAG: Two Approaches to the Long-Context Problem — CCTI Insights</title>
+<meta name="description" content="Retrieval narrows the search; recursion deepens the reasoning. In large systems, the two work best together.">
+<link rel="canonical" href="https://ccti.ro/insights/rlm-vs-rag.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CCTI">
+<meta property="og:title" content="RLM vs RAG: Two Approaches to the Long-Context Problem — CCTI Insights">
+<meta property="og:description" content="Retrieval narrows the search; recursion deepens the reasoning. In large systems, the two work best together.">
+<meta property="og:url" content="https://ccti.ro/insights/rlm-vs-rag.html">
+<meta property="og:image" content="https://ccti.ro/logo.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../logo.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "RLM vs RAG: Two Approaches to the Long-Context Problem", "description": "Retrieval narrows the search; recursion deepens the reasoning. In large systems, the two work best together.", "inLanguage": "en", "author": {"@type": "Organization", "name": "CCTI"}, "publisher": {"@type": "Organization", "name": "Centrul de Cercetări în Termodinamică și Informatică S.R.L.", "logo": "https://ccti.ro/logo.png"}, "datePublished": "2026-11-02", "url": "https://ccti.ro/insights/rlm-vs-rag.html"}</script>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="../"><img src="../logo.png" alt="CCTI logo">CCTI</a>
+  <nav><a href="../#directions">What we do</a><a href="../#products">Products</a><a href="../synergetic-solutions.html">Synergetic Solutions</a><a href="../insights/">Insights</a><a href="../#contact">Contact</a></nav>
+  
+</div></header>
+<main>
+
+<article class="wrap page">
+  <div class="eyebrow">[TB-03] · Engineering leads · Technical investors</div>
+  <h1>RLM vs RAG: Two Approaches to the Long-Context Problem</h1>
+  <p class="lead">Retrieval narrows the search; recursion deepens the reasoning. In large systems, the two work best together.</p>
+  <h2>Retrieval-augmented generation (RAG)</h2><p>RAG retrieves the passages most similar to the question and gives only those to the model. It is fast and cheap at scale. Its weakness is fragmentation: when the answer depends on how distant pieces relate, similarity search can miss the connection.</p><h2>Recursive language models (RLM)</h2><p>An RLM explores the material programmatically and reasons over the fragments it selects. It handles non-linear, multi-step questions better. Its weakness is cost when it is pointed at a huge, unfiltered corpus.</p><h2>The hybrid pipeline</h2><p>Stage 1 — retrieval narrows billions of tokens to a relevant working set. Stage 2 — recursive reasoning works inside that set, where depth matters more than speed. Each stage covers the other&#x27;s weakness.</p><p>The design questions that decide whether it works are concrete: how large the working set must be so nothing essential is filtered out, which model runs each stage, and how every answer is traced back to its sources so that it can be verified.</p>
+  <h2>References</h2><ul class="evidence"><li><a href="https://arxiv.org/abs/2005.11401">Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (arXiv 2005.11401)</a></li><li><a href="https://arxiv.org/abs/2512.24601">Zhang, Kraska &amp; Khattab, Recursive Language Models (arXiv 2512.24601)</a></li></ul>
+  <a class="btn ghost" href="./">← Insights</a>
+</article>
+</main>
+<footer><div class="wrap">© 2026 CCTI S.R.L. · Expanding Horizons · <a href="../#contact">Contact</a></div></footer>
+</body>
+</html>
