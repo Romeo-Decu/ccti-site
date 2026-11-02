@@ -175,7 +175,10 @@ def home(lang: str) -> None:
   <div class="grid five">{products}</div>
 </div></section>
 <section id="services" class="alt"><div class="wrap">
-  <h2>Synergetic Solutions</h2><p class="sub">{e(SYNERGETIC['tagline'])} · {e(SYNERGETIC['intro_short'][lang])}</p>
+  <h2>Synergetic Solutions</h2>
+  <p class="position">{e(SYNERGETIC['tagline'])}</p>
+  <p class="sub">{e(SYNERGETIC['home_lead'][lang])}</p>
+  <div class="grid five">{''.join(f'<div class="card"><div class="num">{i:02d}</div><h3>{e(st["title"])}</h3></div>' for i, st in enumerate(SYNERGETIC['stages'], 1))}</div>
   <a class="btn" href="synergetic-solutions.html">{e(UI['more'][lang])}</a>
   <a class="btn ghost" href="{'../' if lang == 'ro' else ''}insights/">{e(UI['insights'][lang])}</a>
 </div></section>
@@ -245,6 +248,8 @@ def synergetic(lang: str) -> None:
   <p class="lead">{e(s['sub'])}</p>
   <p class="position">{e(s['tagline'])}</p>
   {''.join(f'<p>{e(par)}</p>' for par in s['intro'][lang])}
+  <h2>{e(s['strategy_h'][lang])}</h2>
+  {''.join(f'<p>{e(par)}</p>' for par in s['strategy'][lang])}
   <h2>{e(s['stages_h'][lang])}</h2><p class="sub">{e(s['stages_sub'][lang])}</p>
   <div class="grid">{stages}</div>
   <a class="btn" href="mailto:{ORG['email']}?subject={e(CONTACT[2]['subject'])}">{e(CONTACT[2]['label'][lang])}</a>
