@@ -226,9 +226,11 @@ def product(lang: str, p: dict) -> None:
   <a class="btn" href="mailto:{ORG['email']}?subject={e('Product collaboration — ' + p['name'])}">{e(UI['collab'][lang])}</a>
   <a class="btn ghost" href="../#products">{e(UI['back'][lang])}</a>
 </div>"""
-    ld = {"@context": "https://schema.org", "@type": "Product", "name": p["name"],
-          "description": p["short"]["en"], "brand": {"@type": "Organization", "name": "CCTI"},
-          "manufacturer": {"@type": "Organization", "name": ORG["legal_name"]},
+    # ResearchProject, nu Product: produsele sunt în dezvoltare, fără preț și fără recenzii,
+    # iar Google cere pentru Product „offers”, „review” sau „aggregateRating” (Search Console, 3.11).
+    ld = {"@context": "https://schema.org", "@type": "ResearchProject", "name": p["name"],
+          "description": p["short"]["en"],
+          "parentOrganization": {"@type": "ResearchOrganization", "name": ORG["legal_name"], "url": BASE + "/"},
           "url": url_for(lang, f"products/{p['slug']}.html"), "sameAs": [u for _, u in p["links"]]}
     page(lang, f"products/{p['slug']}.html", f"{p['name']} — CCTI", p["meta"][lang], body,
          jsonld=[ld], depth=1)
